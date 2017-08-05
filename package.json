@@ -18,5 +18,8 @@
   ],
   "author": "Shelton Leuong",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://bitbucket.org/sheltonleung/afford#readme"
+  "homepage": "https://bitbucket.org/sheltonleung/afford#readme",
+  "dependencies": {
+    "gulp": "^3.9.1"
+  }
 }
