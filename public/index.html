@@ -1,255 +1,40 @@
-<!DOCTYPE html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <!--
+      manifest.json provides metadata used when your web app is added to the
+      homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <!--
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
 
-<html>
-
-
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  </head>
   <body>
+    <noscript>
+      You need to enable JavaScript to run this app.
+    </noscript>
+    <div id="root"></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
 
-    <p>
-       NOTES TO SELF:
-    </p>
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
 
-    <h2>ABOUT ME</h2>
-    <p>
-      <input type="range" min="0" max="40000" value="2000" step="500" onchange="updatesavings(this.value)" />
-      &nbsp &nbsp &nbsp
-      Savings Available:
-      $<span type="number" id="savings">2000</span> 
-    </p>
-    <p>
-      <input type="range" min="0" max="40000" value="0" step="500" onchange="updategifts(this.value)" />
-      &nbsp &nbsp &nbsp
-      Gift Money:
-      $<span type="number" id="gifts">0</span> 
-    </p>
-    <p>
-      <input type="range" min="0" max="10000" value="1000" step="100" onchange="updaterent(this.value)" />
-      &nbsp &nbsp &nbsp
-      Current Monthly Rent:
-      $<span id="rent">1000</span> 
-    </p>
-    <p>
-      <input type="range" min="0" max="10000" value="1000" step="100" onchange="updateincome(this.value)" />
-      &nbsp &nbsp &nbsp
-      Monthly Disposable Income:
-      $<span id="income">1000</span> 
-    </p>
-    <p style="color:#0000FF";>
-      Max upfront Cash: $<span type="number" id="max_upfront">0</span> 
-    </p>
-    <p style="color:#0000FF";>
-      Max Monthly Spending: $<span id="max_monthly">0</span> 
-    </p>
-
-    <br/>
-
-    <input type="button" value="Next" onclick=""/>
-
-    <h2>MY MORTGAGE PLAN</h2>
-    <p>
-      <input type="range" min="15" max="30" value="30" step="15" onchange="updatemortlength(this.value)" />
-      &nbsp &nbsp &nbsp
-      Mortgage Length:
-      <span id="mortlength">30</span> 
-      years
-    </p>
-    <p>
-      <input type="range" min="5" max="20" value="20" step="5" onchange="updatepercentdown(this.value)" />
-      &nbsp &nbsp &nbsp
-      Percentage Down:
-      <span id="percentdown">20</span>
-      %
-    </p>
-    <p>
-      <input type="range" min="30" max="2000" value="100" step="10" onchange="updatehouseprice(this.value)" />
-      &nbsp &nbsp &nbsp
-      House Price:
-      $<span id="houseprice_k">100</span>K
-    </p>
-
-    <p style="color:#0000FF";>
-      Downpayment: $<span id="downpayment">0</span>
-    </p>
-
-    <p style="color:#0000FF";>
-      Monthly Mortgage Payment: $<span id="mort_payment">0</span>
-    </p>
-
-    <h3 style="color:#0000FF";>
-      TOTAL UPFRONT CASH: $<span id="total_upfront">5000</span>
-    </h3>
-
-    <h3 style="color:#0000FF";>
-      TOTAL MONTHLY CASH: $<span id="total_monthly">5000</span>
-    </h3>
-
-    <h2 style="color:#666666";>
-      ASSUMPTIONS
-    </h2>
-
-    <p style="color:#666666";>
-      <input type="range" min="0.25" max="20.0" value="4.25" step="0.25" onchange="updatemort_rate(this.value)" />
-      &nbsp &nbsp &nbsp
-      Mortgage Interest Rate: <span id="mort_rate">4.25</span>%
-    </p>
-
-    <p style="color:#666666";>
-      <input type="range" min="0" max="10000" value="5000" step="500" onchange="updateclosing(this.value)" />
-      &nbsp &nbsp &nbsp
-      Closing Cost: $<span id="closing">5000</span>
-    </p>
-
-    <p style="color:#666666";>
-      <input type="range" min="0.0" max="5.0" value="2.0" step="0.2" onchange="updateproperty_tax_rate(this.value)" />
-      &nbsp &nbsp &nbsp
-      Property Tax Rate: <span id="property_tax_rate">2.0</span>%
-    </p>
-
-    <p style="color:#666666";>
-      <input type="range" min="0" max="1500" value="150" step="25" onchange="updateHOA_monthly(this.value)" />
-      &nbsp &nbsp &nbsp
-      Monthly HOA Dues: $<span id="HOA_monthly">150</span>
-    </p>
-
-    <p style="color:#666666";>
-      <input type="range" min="0" max="3000" value="1000" step="50" onchange="updateinsurance_annual(this.value)" />
-      &nbsp &nbsp &nbsp
-      Annual Insurance Premium: $<span id="insurance_annual">1000</span>
-    </p>
-
-    <p style="color:#666666";>
-      <input type="range" min="0" max="10000" value="2500" step="500" onchange="updatemaint_annual(this.value)" />
-      &nbsp &nbsp &nbsp
-      Annual House Maintenance: $<span id="maint_annual">2500</span>
-    </p>
-
-      
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "AIzaSyBzTBpgIbruuapBB_I9bai8XT7UC-VANcI",
-        authDomain: "afford-34acf.firebaseapp.com",
-        databaseURL: "https://afford-34acf.firebaseio.com",
-        projectId: "afford-34acf",
-        storageBucket: "",
-        messagingSenderId: "339899004743"
-      };
-      firebase.initializeApp(config);
-    </script>
- 
-    <script type="text/javascript">
-
-    recalculate()
-
-    function recalculate()
-    {
-
-      var v_mort_rate = parseFloat(document.getElementById("mort_rate").textContent);
-      var v_closing = parseInt(document.getElementById("closing").textContent, 10);
-      var v_property_tax_rate = parseFloat(document.getElementById("property_tax_rate").textContent);
-      var v_HOA_monthly = parseInt(document.getElementById("HOA_monthly").textContent, 10);
-      var v_insurance_annual = parseInt(document.getElementById("insurance_annual").textContent, 10);
-      var v_maint_annual = parseInt(document.getElementById("maint_annual").textContent, 10);
-
-      var v_savings = parseInt(document.getElementById("savings").textContent, 10);
-      var v_gifts = parseInt(document.getElementById("gifts").textContent, 10);
-      var v_rent = parseInt(document.getElementById("rent").textContent, 10);
-      var v_income = parseInt(document.getElementById("income").textContent, 10);
-      var v_mortlength = parseInt(document.getElementById("mortlength").textContent, 10);
-      var v_percentdown = parseInt(document.getElementById("percentdown").textContent, 10);
-      var v_houseprice = 1000*parseInt(document.getElementById("houseprice_k").textContent, 10);
-
-      var v_max_upfront = v_savings + v_gifts;
-      var v_max_monthly = v_rent + v_income;
-
-      var v_insurance_monthly = v_insurance_annual/100;
-      var v_downpayment = v_percentdown*v_houseprice/100;
-      var v_mort_payment = (v_houseprice-v_downpayment)*(1-1/(1+v_mort_rate/100/12))/(1-1/Math.pow((1+v_mort_rate/100/12),v_mortlength*12+1));
-      var v_tax_monthly = v_houseprice*v_property_tax_rate/100/12;
-      var v_maint_monthly = v_maint_annual/12;
-      var v_total_monthly = v_mort_payment + v_insurance_monthly + v_HOA_monthly + v_maint_monthly + v_tax_monthly;
-
-      var v_total_upfront = v_downpayment + v_closing;
-
-      document.getElementById("max_upfront").innerHTML = v_max_upfront;
-      document.getElementById("max_monthly").innerHTML = v_max_monthly;
-
-      document.getElementById("downpayment").innerHTML = v_downpayment;
-      document.getElementById("mort_payment").innerHTML = v_mort_payment.toFixed(2);
-
-      document.getElementById("total_upfront").innerHTML = v_total_upfront;
-      document.getElementById("total_monthly").innerHTML = v_total_monthly.toFixed(2);
-    }
-
-    function updatesavings(newValue)
-    {
-      document.getElementById("savings").innerHTML=newValue;
-      recalculate();
-    }
-    function updategifts(newValue)
-    {
-      document.getElementById("gifts").innerHTML=newValue;
-      recalculate();
-    }
-    function updaterent(newValue)
-    {
-      document.getElementById("rent").innerHTML=newValue;
-      recalculate();
-    }
-    function updateincome(newValue)
-    {
-      document.getElementById("income").innerHTML=newValue;
-      recalculate();
-    }
-    function updatemortlength(newValue)
-    {
-      document.getElementById("mortlength").innerHTML=newValue;
-      recalculate();
-    }
-    function updatepercentdown(newValue)
-    {
-      document.getElementById("percentdown").innerHTML=newValue;
-      recalculate();
-    }
-    function updatehouseprice(newValue)
-    {
-      document.getElementById("houseprice_k").innerHTML=newValue;
-      recalculate();
-    }
-    function updatemort_rate(newValue)
-    {
-      document.getElementById("mort_rate").innerHTML=newValue;
-      recalculate();
-    }
-    function updateclosing(newValue)
-    {
-      document.getElementById("closing").innerHTML=newValue;
-      recalculate();
-    }
-    function updateproperty_tax_rate(newValue)
-    {
-      document.getElementById("property_tax_rate").innerHTML=newValue;
-      recalculate();
-    }
-    function updateHOA_monthly(newValue)
-    {
-      document.getElementById("HOA_monthly").innerHTML=newValue;
-      recalculate();
-    }
-    function updateinsurance_annual(newValue)
-    {
-      document.getElementById("insurance_annual").innerHTML=newValue;
-      recalculate();
-    }
-    function updatemaint_annual(newValue)
-    {
-      document.getElementById("maint_annual").innerHTML=newValue;
-      recalculate();
-    }
-
-    </script>
-
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
   </body>
 </html>
