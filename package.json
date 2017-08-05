@@ -19,7 +19,8 @@
   "author": "Shelton Leuong",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://bitbucket.org/sheltonleung/afford#readme",
-  "dependencies": {
-    "gulp": "^3.9.1"
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-bower": "0.0.13"
   }
 }
