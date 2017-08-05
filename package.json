@@ -22,5 +22,9 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-bower": "0.0.13"
+  },
+  "dependencies": {
+    "browser-sync": "^2.18.13",
+    "require-dir": "^0.3.2"
   }
 }
