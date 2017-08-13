@@ -4,7 +4,10 @@
   "description": "Mortgage affordability calculator for dummies.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
   },
   "repository": {
     "type": "git",
@@ -26,15 +29,13 @@
   },
   "dependencies": {
     "browser-sync": "^2.18.13",
+    "firebase": "^4.2.0",
+    "material-ui": "^0.18.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "^1.0.10",
+    "react-tap-event-plugin": "^2.0.1",
+    "reactfire": "^1.0.0",
     "require-dir": "^0.3.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
   }
 }

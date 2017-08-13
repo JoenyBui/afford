@@ -7,6 +7,35 @@ This README would normally document whatever steps are necessary to get your app
 * Quick summary
 * Version
 
+* React
+Always start component names with a capital letter
+
+For example, `<div \>` represents a DOM tag, but `<Welcome />` 
+represents a component and requires `Welcome` to be in scope.
+
+* Caveat
+Components must return a single root element.  This is why we added a
+`<div>` to contain all the `<Welcome />` elements.
+
+* Whether you declare a component as a function or a class, it must 
+never modify its own props. **All React components must act like pure
+functions wit respect to their props.**
+
+* State
+State is similar to props, but it is private and fully controlled by 
+the component.
+
+* Special methods
+"lifecyle hooks"
+componentDidMount() {}
+componentWillUnmount() {}
+
+**Do not modify state directly, use setState().  The only place is in
+the constructor.**
+
+**State updates may be asynchronous**
+**State Updates are Merged**
+
 ### Folder Structure ###
 
 
