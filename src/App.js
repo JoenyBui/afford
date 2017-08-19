@@ -24,9 +24,25 @@ class App extends Component {
     this.update = this.update.bind(this);
   }
 
-  update(event) {
+  update(event, value) {
+    /*
+    *
+    * */
     console.log('Update @ App');
 
+    const model = this.state.model;
+
+    model[value.id] = value.value;
+
+    // Recalculate and Refresh
+    model.calculate();
+
+    // re-render
+    // this.forceUpdate();
+
+    this.setState({
+      model: model
+    })
   }
 
   render() {

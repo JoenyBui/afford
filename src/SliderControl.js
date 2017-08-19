@@ -22,7 +22,12 @@ class SliderControl extends Component {
     this.setState({value: value});
 
     if ("onChangeRefresh" in this.props) {
-      this.props.onChangeRefresh(value);
+      var obj = {
+        id: this.props.id.toString(),
+        value: value
+    };
+
+      this.props.onChangeRefresh(event, obj);
     }
   };
 

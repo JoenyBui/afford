@@ -20,6 +20,54 @@ class HomeCalculator {
     this.percentDown = 10;
     this.housePrice = 1000*10;
 
+    this.chartData = {
+      labels: ['Item 1', 'Item 2', 'Item 3'],
+      datasets: [{
+        data: [10, 20, 30]
+      }]
+    };
+
+    this.pieData = {
+      datasets: [{
+        data: [this.savings, this.gifts, this.rent, this.income]
+      }],
+
+      // These labels appear in the legend and in the tooltips when hovering different arcs
+      labels: [
+        'Savings',
+        'Gifts',
+        'Rent',
+        'Income'
+      ]
+    };
+
+    this.barData = {
+      datasets: [{
+        data:[this.savings, this.gifts, this.rent, this.income]
+      }],
+
+      labels: [
+        'Savings',
+        'Gifts',
+        'Rent',
+        'Income'
+      ]
+    };
+
+    this.pieOptions = {
+
+    };
+
+    this.barOptions = {
+      scales: {
+        xAxes: [{
+          gridLines: {
+            offsetGridLines: true
+          }
+        }]
+      }
+    };
+
     // Calculate new values.
     this.calculate = this.calculate.bind(this);
     // this.onChangeRecalculate.bind(this);
