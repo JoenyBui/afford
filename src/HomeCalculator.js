@@ -32,4 +32,18 @@ class HomeCalculator {
     this.totalUpfront = this.downpayment + this.closing;
 
   }
+
+  loadLocal() {
+    var item = localStorage.getItem('homeCalculator');
+
+  }
+
+  saveLocal() {
+    localStorage.setItem({
+      homeCalculator: JSON.stringify(this)
+    })
+  }
+
 }
+
+export default HomeCalculator;
