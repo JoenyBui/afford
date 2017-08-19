@@ -44,7 +44,8 @@ class SliderControlled extends Component {
 
     this.state = {
       value: props.value
-    }
+    };
+
     //  This binding is necessary to make 'this' work in the callback
     this.handleSliderChange = this.handleSliderChange.bind(this);
   }
@@ -59,6 +60,7 @@ class SliderControlled extends Component {
         <Slider value={this.state.value}
                 min={this.props.min}
                 max={this.props.max}
+                step={this.props.step}
                 onChange={this.handleSliderChange} />
         <p>
           <span>{this.props.name}</span>
@@ -81,6 +83,13 @@ function TabsExampleSimple(props) {
                           min={0}
                           max={40000}
                           step={500}
+                          value={2000}/>
+
+        <SliderControlled name="sliderSavingAvailable"
+                          name={'Spacing Available'}
+                          min={0}
+                          max={40000}
+                          step={0.1}
                           value={2000}/>
       </div>
     </Tab>
