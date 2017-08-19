@@ -24,16 +24,18 @@ class SliderControl extends Component {
   render() {
     return (
       <div>
+        <p>
+          <span>{this.props.name}</span>
+          <span>{': '}</span>
+          <span>{this.props.prefix}</span>
+          <span>{this.state.value}</span>
+          <span>{this.props.suffix}</span>
+        </p>
         <Slider value={this.state.value}
                 min={this.props.min}
                 max={this.props.max}
                 step={this.props.step}
-                onChange={this.handleSliderChange}/>
-        <p>
-          <span>{this.props.name}</span>
-          <span>{': '}</span>
-          <span>{this.state.value}</span>
-        </p>
+                onChange={this.handleSliderChange} />
       </div>
     )
   }
