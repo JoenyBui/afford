@@ -12,14 +12,20 @@ class HomeCalculator {
     this.insuranceAnnual = 10;
     this.maintenaneAnnual = 10;
 
-    this.savings = 10;
-    this.gifts = 10;
+    this.savings = 999;
+    this.gifts = 66;
     this.rent = 10;
     this.income = 10;
     this.mortgageLength = 10;
     this.percentDown = 10;
     this.housePrice = 1000*10;
 
+    // Calculate new values.
+    this.calculate = this.calculate.bind(this);
+    // this.onChangeRecalculate.bind(this);
+  }
+
+  calculate() {
     this.maxUpfront = this.savings + this.gifts;
     this.maxMonthly = this.rent + this.income;
 
@@ -31,6 +37,12 @@ class HomeCalculator {
     this.totalMonthly = this.mortgagePayment + this.insuranceMonthly + this.hoaMonthly + this.maintenaneMonthly + this.taxMonthly;
     this.totalUpfront = this.downpayment + this.closing;
 
+  }
+
+  onChangeRefresh() {
+    console.log("Call recalculate.");
+
+    this.calculate();
   }
 
   loadLocal() {

@@ -8,7 +8,7 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import {styles} from './ConfigStyles';
 import SlideControl from './SliderControl';
 
-import 'TabsControl.css';
+import './TabsControl.css';
 
 class HomeCalculatorTabsControl extends Component {
   constructor(props) {
@@ -18,13 +18,23 @@ class HomeCalculatorTabsControl extends Component {
 
     //  This binding is necessary to make 'this' work in the callback
     this.handleActive = this.handleActive.bind(this);
+
+    this.update = this.update.bind(this);
   }
 
-  handleActive(tab) {
-    alert(`A tab with this route property ${tab.props['data-route']} was activated.`);
+  update(event) {
+    console.log('Update at home calculator');
+
+    this.props.update();
+  }
+
+  handleActive(event, value) {
+
   }
 
   render() {
+    const model = this.props.model;
+
     return <Tabs>
       <Tab label="About Me">
         <div>
@@ -32,10 +42,11 @@ class HomeCalculatorTabsControl extends Component {
 
           <SlideControl name="sliderSavingAvailable"
                         name={'Spacing Available'}
+                        onChangeRefresh={this.update}
                         min={0}
                         max={100000}
                         step={500}
-                        value={10000}
+                        value={model.savings}
                         prefix={'$'}/>
 
           <SlideControl name="giftMoney"
@@ -44,7 +55,7 @@ class HomeCalculatorTabsControl extends Component {
                         max={40000}
                         step={500}
                         prefix={'$'}
-                        value={0}/>
+                        value={model.gifts}/>
 
           <SlideControl name="currentMonthlyRent"
                         name={'Current Monthly Rent'}

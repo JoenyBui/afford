@@ -19,7 +19,11 @@ class SliderControl extends Component {
   }
 
   handleSliderChange = (event, value) => {
-    this.setState({value: value})
+    this.setState({value: value});
+
+    if ("onChangeRefresh" in this.props) {
+      this.props.onChangeRefresh(value);
+    }
   };
 
   render() {

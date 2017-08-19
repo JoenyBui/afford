@@ -20,13 +20,20 @@ class App extends Component {
     this.state = {
       model: new HomeCalculator()
     };
+
+    this.update = this.update.bind(this);
+  }
+
+  update(event) {
+    console.log('Update @ App');
+
   }
 
   render() {
     // MuiThemeProvider takes the theme as a property and passed it down the hierarchy.
     return (
       <MuiThemeProvider muiTheme={muiTheme}>
-        <HomeCalculatorTabsControl />
+        <HomeCalculatorTabsControl model={this.state.model} update={this.update} />
       </MuiThemeProvider>
     )
   }
