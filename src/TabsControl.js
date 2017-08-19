@@ -8,8 +8,6 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import {styles} from './ConfigStyles';
 import SlideControl from './SliderControl';
 
-// import Line from '/react-chartjs';
-
 import './TabsControl.css';
 
 
@@ -48,13 +46,13 @@ class HomeCalculatorTabsControl extends Component {
         <div>
           <h2 style={styles.headline}>What's your financial situation?</h2>
 
-          <SlideControl id='spacing'
-                        name='Spacing Available'
+          <SlideControl name="sliderSavingAvailable"
+                        name={'Spacing Available'}
                         onChangeRefresh={this.update}
                         min={0}
                         max={100000}
                         step={500}
-                        value={model.savings}
+                        value={model.savingsAvailable}
                         prefix={'$'}/>
 
           <SlideControl name={'Gift Money'}
@@ -62,21 +60,21 @@ class HomeCalculatorTabsControl extends Component {
                         max={40000}
                         step={500}
                         prefix={'$'}
-                        value={model.gifts}/>
+                        value={model.giftMoney}/>
 
           <SlideControl name={'Current Monthly Rent'}
                         min={0}
                         max={10000}
                         step={100}
-                        value={1000}
-                        prefix={'$'}/>
+                        prefix={'$'}
+                        value={model.monthlyRent}/>
 
           <SlideControl name={'Monthly Disposable Income'}
                         min={0}
                         max={15000}
-                        step={1000}
-                        value={100}
-                        prefix={'$'}/>
+                        step={100}
+                        prefix={'$'}
+                        value={model.monthlyDisposableIncome}/>
         </div>
       </Tab>
 
@@ -88,22 +86,24 @@ class HomeCalculatorTabsControl extends Component {
                         min={5}
                         max={30}
                         step={5}
-                        value={30}
-                        suffix={' years'}/>
+                        suffix={' years'}
+                        value={model.mortgageLength}/>
 
           <SlideControl name={'Percent Down'}
                         min={5}
                         max={100}
                         step={5}
                         value={5}
-                        suffix={'%'}/>
+                        suffix={'%'}
+                        value={model.percentDown}/>
 
           <SlideControl name={'House Price'}
                         min={50}
                         max={2000}
                         step={5}
-                        value={30}
-                        suffix={' years'}/>
+                        prefix={'$'}
+                        suffix={'K'}
+                        value={model.housePriceK}/>
         </div>
       </Tab>
 
@@ -115,43 +115,43 @@ class HomeCalculatorTabsControl extends Component {
                         min={0.25}
                         max={20.0}
                         step={0.25}
-                        value={4.25}
-                        suffix={'%'}/>
+                        suffix={'%'}
+                        value={model.mortgageRate}/>
 
           <SlideControl name={'Closing Cost'}
                         min={0}
                         max={10000}
                         step={500}
-                        value={5000}
-                        prefix={'$'}/>
+                        prefix={'$'}
+                        value={model.closingCost}/>
 
           <SlideControl name={'Property Tax Rate'}
                         min={0.0}
                         max={5.0}
                         step={0.2}
-                        value={2.0}
-                        suffix={'%'}/>
+                        suffix={'%'}
+                        value={model.propertyTaxRate}/>
 
           <SlideControl name={'HOA Monthly'}
                         min={0}
                         max={1500}
                         step={25}
-                        value={150}
-                        prefix={'$'}/>
+                        prefix={'$'}
+                        value={model.hoaMonthly}/>
 
           <SlideControl name={'Insurance Annual'}
                         min={0}
                         max={3000}
                         step={50}
-                        value={1000}
-                        prefix={'$'}/>
+                        prefix={'$'}
+                        value={model.insuranceAnnual}/>
 
           <SlideControl name={'Maintenance Annual'}
                         min={0}
-                        max={10000}
+                        max={20000}
                         step={500}
-                        value={2500}
-                        prefix={'$'}/>
+                        prefix={'$'}
+                        value={model.maintenanceAnnual}/>
         </div>
       </Tab>
 

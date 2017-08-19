@@ -5,20 +5,20 @@
 class HomeCalculator {
   constructor() {
 
-    this.mortgageRate = null;
-    this.closing = 10;
-    this.propertyTaxRate = null;
-    this.hoaMonthly = 10;
-    this.insuranceAnnual = 10;
-    this.maintenaneAnnual = 10;
+    this.mortgageRate = 4.0;
+    this.closingCost = 5000;
+    this.propertyTaxRate = 1.5;
+    this.hoaMonthly = 150;
+    this.insuranceAnnual = 1000;
+    this.maintenanceAnnual = 1500;
 
-    this.savings = 999;
-    this.gifts = 66;
-    this.rent = 10;
-    this.income = 10;
-    this.mortgageLength = 10;
+    this.savingsAvailable = 25000;
+    this.giftMoney = 0;
+    this.monthlyRent = 1000;
+    this.monthlyDisposableIncome = 500;
+    this.mortgageLength = 30;
     this.percentDown = 10;
-    this.housePrice = 1000*10;
+    this.housePriceK = 100;
 
     this.chartData = {
       labels: ['Item 1', 'Item 2', 'Item 3'],
@@ -74,8 +74,9 @@ class HomeCalculator {
   }
 
   calculate() {
-    this.maxUpfront = this.savings + this.gifts;
-    this.maxMonthly = this.rent + this.income;
+    this.housePrice = 1000*this.housePriceK;
+    this.maxUpfront = this.savingsAvailable + this.giftMoney;
+    this.maxMonthly = this.monthlyRent + this.monthlyDisposableIncome;
 
     this.insuranceMonthly = this.insuranceAnnual/100;
     this.downpayment = this.percentDown*this.housePrice/100;
@@ -83,7 +84,7 @@ class HomeCalculator {
     this.taxMonthly = this.housePrice*this.propertyTaxRate/100/12;
     this.maintenaneMonthly = this.maintenaneAnnual/12;
     this.totalMonthly = this.mortgagePayment + this.insuranceMonthly + this.hoaMonthly + this.maintenaneMonthly + this.taxMonthly;
-    this.totalUpfront = this.downpayment + this.closing;
+    this.totalUpfront = this.downpayment + this.closingCost;
 
   }
 
