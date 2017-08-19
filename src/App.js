@@ -81,7 +81,7 @@ function TabsExampleSimple(props) {
 
     <Tab label="My Mortgage Plan">
       <div>
-        <h2 style={styles.headline}>What kind of mortgage do I want to explore?</h2>
+        <h2 style={styles.headline}>What kind of mortgage do you want to explore?</h2>
         
         <SlideControl name="mortgageLength"
                           name={'Mortgage Length'}
