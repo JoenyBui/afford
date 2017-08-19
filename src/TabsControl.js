@@ -8,6 +8,8 @@ import {Tabs, Tab} from 'material-ui/Tabs';
 import {styles} from './ConfigStyles';
 import SlideControl from './SliderControl';
 
+import 'TabsControl.css';
+
 class HomeCalculatorTabsControl extends Component {
   constructor(props) {
     super(props);

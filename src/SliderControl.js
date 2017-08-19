@@ -4,6 +4,7 @@
 import React, {Component} from 'react';
 import Slider from 'material-ui/Slider'
 
+import './SliderControl.css';
 
 class SliderControl extends Component {
   constructor(props) {
@@ -35,7 +36,7 @@ class SliderControl extends Component {
                 min={this.props.min}
                 max={this.props.max}
                 step={this.props.step}
-                onChange={this.handleSliderChange} />
+                onChange={this.handleSliderChange}/>
       </div>
     )
   }
