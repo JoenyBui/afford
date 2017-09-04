@@ -23,7 +23,9 @@ class SliderControl extends Component {
 
     if ("onChangeRefresh" in this.props) {
       var obj = {
-        id: this.props.id.toString(),
+        // shelton hacked this to work, took out "id"
+        // id: this.props.id.toString(),
+        id: this.props.toString(),
         value: value
     };
 
