@@ -3,13 +3,21 @@
  */
 import React, {Component} from 'react';
 
-import {Tabs, Tab} from 'material-ui/Tabs';
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 
-import {styles} from './ConfigStyles';
-import SlideControl from './SliderControl';
+import SliderControl from '../SliderControl/SliderControl'
+
+// import {styles} from 'ConfigStyles'
+// import {styles} from '/ConfigStyles';
+
 
 import './TabsControl.css';
 
+
+const styles = {
+  headline: ''
+}
 
 var LineChart = require("react-chartjs").Line;
 var PieChart = require("react-chartjs").Pie;
@@ -23,7 +31,7 @@ class HomeCalculatorTabsControl extends Component {
     this.state = {};
 
     //  This binding is necessary to make 'this' work in the callback
-    this.handleActive = this.handleActive.bind(this);
+    // this.handleActive = this.handleActive.bind(this);
 
     this.update = this.update.bind(this);
   }
@@ -34,10 +42,6 @@ class HomeCalculatorTabsControl extends Component {
     this.props.update(event, value);
   }
 
-  handleActive(event, value) {
-
-  }
-
   render() {
     const model = this.props.model;
 
@@ -46,7 +50,7 @@ class HomeCalculatorTabsControl extends Component {
         <div>
           <h2 style={styles.headline}>What's your financial situation?</h2>
 
-          <SlideControl name="sliderSavingAvailable"
+          <SliderControl name="sliderSavingAvailable"
                         name={'Spacing Available'}
                         onChangeRefresh={this.update}
                         min={0}
@@ -55,21 +59,21 @@ class HomeCalculatorTabsControl extends Component {
                         value={model.savingsAvailable}
                         prefix={'$'}/>
 
-          <SlideControl name={'Gift Money'}
+          <SliderControl name={'Gift Money'}
                         min={0}
                         max={40000}
                         step={500}
                         prefix={'$'}
                         value={model.giftMoney}/>
 
-          <SlideControl name={'Current Monthly Rent'}
+          <SliderControl name={'Current Monthly Rent'}
                         min={0}
                         max={10000}
                         step={100}
                         prefix={'$'}
                         value={model.monthlyRent}/>
 
-          <SlideControl name={'Monthly Disposable Income'}
+          <SliderControl name={'Monthly Disposable Income'}
                         min={0}
                         max={15000}
                         step={100}
@@ -82,14 +86,14 @@ class HomeCalculatorTabsControl extends Component {
         <div>
           <h2 style={styles.headline}>What kind of mortgage do you want to explore?</h2>
 
-          <SlideControl name={'Mortgage Length'}
+          <SliderControl name={'Mortgage Length'}
                         min={5}
                         max={30}
                         step={5}
                         suffix={' years'}
                         value={model.mortgageLength}/>
 
-          <SlideControl name={'Percent Down'}
+          <SliderControl name={'Percent Down'}
                         min={5}
                         max={100}
                         step={5}
@@ -97,7 +101,7 @@ class HomeCalculatorTabsControl extends Component {
                         suffix={'%'}
                         value={model.percentDown}/>
 
-          <SlideControl name={'House Price'}
+          <SliderControl name={'House Price'}
                         min={50}
                         max={2000}
                         step={5}
@@ -111,42 +115,42 @@ class HomeCalculatorTabsControl extends Component {
         <div>
           <h2 style={styles.headline}>If you want to get more complicated and advanced, explore these dials.</h2>
 
-          <SlideControl name={'Mortgage Rate'}
+          <SliderControl name={'Mortgage Rate'}
                         min={0.25}
                         max={20.0}
                         step={0.25}
                         suffix={'%'}
                         value={model.mortgageRate}/>
 
-          <SlideControl name={'Closing Cost'}
+          <SliderControl name={'Closing Cost'}
                         min={0}
                         max={10000}
                         step={500}
                         prefix={'$'}
                         value={model.closingCost}/>
 
-          <SlideControl name={'Property Tax Rate'}
+          <SliderControl name={'Property Tax Rate'}
                         min={0.0}
                         max={5.0}
                         step={0.2}
                         suffix={'%'}
                         value={model.propertyTaxRate}/>
 
-          <SlideControl name={'HOA Monthly'}
+          <SliderControl name={'HOA Monthly'}
                         min={0}
                         max={1500}
                         step={25}
                         prefix={'$'}
                         value={model.hoaMonthly}/>
 
-          <SlideControl name={'Insurance Annual'}
+          <SliderControl name={'Insurance Annual'}
                         min={0}
                         max={3000}
                         step={50}
                         prefix={'$'}
                         value={model.insuranceAnnual}/>
 
-          <SlideControl name={'Maintenance Annual'}
+          <SliderControl name={'Maintenance Annual'}
                         min={0}
                         max={20000}
                         step={500}

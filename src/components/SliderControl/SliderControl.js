@@ -2,7 +2,7 @@
  * Created by joeny on 8/18/17.
  */
 import React, {Component} from 'react';
-import Slider from 'material-ui/Slider'
+import Slider from '@material-ui/core/Slider'
 
 import './SliderControl.css';
 
